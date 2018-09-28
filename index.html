@@ -22,36 +22,19 @@
 
 <div>
 <div id="div1">
-	
 <h2 id="your-round1"> </h2>
-<h2 id="your-round2"></h2>
-<h2 id="your-round3"> </h2>
-<h2 id="your-round4"> </h2>
-<h2 id="your-round5"> </h2>
-
 </div>
+
 <div id="div2">
 <h2 id="computer-round1">  </h2>
-<h2 id="computer-round2">  </h2>
-<h2 id="computer-round3">  </h2>
-<h2 id="computer-round4">  </h2>
-<h2 id="computer-round5">  </h2>
 </div>
 
 <div id="div3">
 <h2 id="your-score1">  </h2>
-<h2 id="your-score2">  </h2>
-<h2 id="your-score3">  </h2>
-<h2 id="your-score4">  </h2>
-<h2 id="your-score5">  </h2>
 </div>
 
 <div id="div4">
 <h2 id="computer-score1">  </h2>
-<h2 id="computer-score2">  </h2>
-<h2 id="computer-score3">  </h2>
-<h2 id="computer-score4">  </h2>
-<h2 id="computer-score5">  </h2>
 </div>
 
 
@@ -84,80 +67,54 @@ function computerPlay(){
 		let num = Math.floor(Math.random() * 3) + 1;
   switch(num) {
     case 1:
-      return 'rock';
+      return 'Rock';
     case 2:
-      return 'paper';
+      return 'Paper';
     case 3:
-      return 'scissors';
+      return 'Scissors';
   }
 }
 
 function playRound(arg1, arg2) {
-		if (arg1 == 'paper')
-			if (arg2 == 'scissors')
+		if (arg1 == 'Paper')
+			if (arg2 == 'Scissors')
 			return 'lose';
-		else if (arg2 == 'rock')
+		else if (arg2 == 'Rock')
 			return 'win';
 		else
 			return 'tie';
-		if (arg1 == 'rock')
-			if (arg2 == 'scissors')
+		if (arg1 == 'Rock')
+			if (arg2 == 'Scissors')
 			return 'win';
-		else if (arg2 == 'paper')
+		else if (arg2 == 'Paper')
 			return 'lose';
 		else
 			return 'tie';
-		if (arg1 == 'scissors')
-			if (arg2 == 'paper')
+		if (arg1 == 'Scissors')
+			if (arg2 == 'Paper')
 			return 'win';
-		else if (arg2 == 'rock')
+		else if (arg2 == 'Rock')
 			return 'lose';
 		else
 			return 'tie';
-		// body...
 	}
 
-/*	function playRound(arg1, arg2) {
-		if (arg1 == 'paper')
-			if (arg2 == 'scissors')
-			return 'lose';
-		else if (arg2 == 'rock')
-			return 'win';
-		else
-			return 'tie';
-		if (arg1 == 'rock')
-			if (arg2 == 'scissors')
-			return 'win';
-		else if (arg2 == 'paper')
-			return 'lose';
-		else
-			return 'tie';
-		if (arg1 == 'scissors')
-			if (arg2 == 'paper')
-			return 'win';
-		else if (arg2 == 'rock')
-			return 'lose';
-		else
-			return 'tie';
-		// body...
-	}
-*/
 
 var btnp=document.querySelector('#button-paper');
 btnp.addEventListener('click', ()=>{
-	playerSelection='paper';
+	playerSelection='Paper';
 	playGame();
 });
 
 var btnr=document.querySelector('#button-rock');
 btnr.addEventListener('click', ()=>{
-	playerSelection='rock';
+	playerSelection='Rock';
 	playGame();
 });
 
 var btns=document.querySelector('#button-scissors');
 btns.addEventListener('click', ()=>{
-	playerSelection='scissors';
+	playerSelection='Scissors';
 	playGame();
 });
 var btnreset=document.querySelector('#button-reset');
@@ -170,17 +127,6 @@ document.getElementById("result").textContent="";
 
 });
 
-/*********************************************
-	round++;
-	document.getElementById("your-round1").textContent="Round " + round + ": You selected Rock";
-computerSelection=computerPlay();
-document.getElementById("computer-round1").textContent="Computer selected " + computerSelection;
-
-var result=playRound(playerSelection, computerSelection);
-
-document.getElementById("your-score1").textContent="Your score " + playerScore;
-document.getElementById("computer-score1").textContent="Computer score " + computerScore;
-*****************************************/
 
 function playGame(){
 	round++;
@@ -191,13 +137,12 @@ function playGame(){
 				playerScore++;
 				else if (result == 'lose')
 					computerScore++;
-document.getElementById("your-round1").textContent="Round " + round + ": You selected " + playerSelection;
-document.getElementById("computer-round1").textContent="Computer selected " + computerSelection;
+document.getElementById("your-round1").textContent="Round " + round + ": You selected: " + playerSelection;
+document.getElementById("computer-round1").textContent="Computer selected: " + computerSelection;
 
-//var result=playRound(playerSelection, computerSelection);
 
-document.getElementById("your-score1").textContent="Your score " + playerScore;
-document.getElementById("computer-score1").textContent="Computer score " + computerScore;
+document.getElementById("your-score1").textContent="Your score: " + playerScore;
+document.getElementById("computer-score1").textContent="Computer score: " + computerScore;
 
 if(round==5){
 	if(playerScore>computerScore)
@@ -211,110 +156,6 @@ if(round==5){
 	}
 		}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/************************************
-		if (playerScore>computerScore)
-			gameResult="You won";
-		else if(playerScore<computerScore)
-			gameResult="You lost";
-		else
-			gameResult="Tied";
-
-		alert(gameResult);
-	}
-*************************************/
-
-	
-/*	var rbtn=document.getElementById('button-rock');
-	rbtn.onClick(){
-var r1=document.querySelector('you-round1');
-	r1.textContent="you selected rock";
-	}
-*/
-	
-/*
-
-	function computerPlay(){
-		let num = Math.floor(Math.random() * 3) + 1;
-  switch(num) {
-    case 1:
-      return 'rock';
-    case 2:
-      return 'paper';
-    case 3:
-      return 'scissors';
-  }
-	}
-	
-	function playRound(arg1, arg2) {
-		if (arg1 == 'paper')
-			if (arg2 == 'scissors')
-			return 'lose';
-		else if (arg2 == 'rock')
-			return 'win';
-		else
-			return 'tie';
-		if (arg1 == 'rock')
-			if (arg2 == 'scissors')
-			return 'win';
-		else if (arg2 == 'paper')
-			return 'lose';
-		else
-			return 'tie';
-		if (arg1 == 'scissors')
-			if (arg2 == 'paper')
-			return 'win';
-		else if (arg2 == 'rock')
-			return 'lose';
-		else
-			return 'tie';
-		// body...
-	}
-
-	function playGame(){
-		var playerScore=0;
-		var computerScore=0;
-		var gameResult;
-		for(i=1;i<6;i++){
-			var playerSelection=prompt("enter your choice").toLowerCase();
-	var computerSelection=computerPlay();
-	alert("computer selected" + "     " + computerSelection);
-			var result=playRound(playerSelection, computerSelection);
-			if (result == 'win')
-				playerScore++;
-				else if (result == 'lose')
-					computerScore++;
-
-			alert("round " + i + " " + "You " + playerScore + "  computer" + " " +computerScore)
-		}
-		if (playerScore>computerScore)
-			gameResult="You won";
-		else if(playerScore<computerScore)
-			gameResult="You lost";
-		else
-			gameResult="Tied";
-
-		alert(gameResult);
-	}
-
-	
-	
-	playGame();
-
-	*/
 </script>
 
 </body>
